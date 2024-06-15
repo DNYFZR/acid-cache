@@ -8,6 +8,8 @@ users = {
   "C Person" : "C.Person@email.com",
   "D Person" : "D.Person@email.com",
   "E Person" : "E.Person@email.com",
+  "X Person" : "X.Person@email.com",
+  "Y Person" : "Y.Person@email.com",
 }
 
 for user, email in users.items():

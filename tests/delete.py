@@ -16,7 +16,7 @@ for table in tables:
   req = requests.get(
     url=f"http://localhost:3000/{table}",
   )
-  print("GET", table, req.status_code, req.content)
+  print("GET", table, req.status_code, req.json())
 
 # Delete tables
 for table in tables:
@@ -24,4 +24,4 @@ for table in tables:
     url=f"http://localhost:3000/drop/{table}",
   )
 
-  print("DELETE", table, req.status_code, req.content)
+  print("DELETE", table, req.status_code, req.json())

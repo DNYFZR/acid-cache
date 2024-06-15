@@ -2,8 +2,8 @@ import requests
 
 # Test put endpoint
 users_updated = [
-  {"id": 1, "name": "A Person", "email" :  "A.Person@email.com",},
-  {"id": 10, "name": "A Dude", "email" :  "A.Dude@email.com",},
+  {"id": 1, "name": "A Person", "email" :  "A.Person2024@email.com",},
+  {"id": 100, "name": "Ana Lyst", "email" :  "A.Lyst@email.com",},
 ]
 
 for user in users_updated:
@@ -12,4 +12,4 @@ for user in users_updated:
     json={"name":user["name"], "email":user["email"] }
   )
 
-  print("PUT", user, req.status_code)
+  print("PUT", req.status_code, req.json())
