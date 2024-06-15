@@ -22,7 +22,6 @@
     "typescript": "^5.2.2"
   },
   "scripts": {
-    "start": "npx tsx src/server.ts",
-    "test": "node tests/run.ts"
+    "start": "npx tsx src/server.ts"
   }
 }
