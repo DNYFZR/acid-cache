@@ -9,7 +9,7 @@ interface cacheEntry {
   timestamp:string;
 }
 
-export class CacheDB {
+export class AcidCache {
   cachePath:string;
   cacheTable:string;
   cache: Database;
@@ -67,7 +67,7 @@ export class CacheDB {
     `);
   }
 
-  addColumn(table:string, column:string, type:string) {
+  addColumn(table:string, column:string, type?:string) {
     this.cache.run(`
       ALTER TABLE ${table}
       ADD COLUMN ${column} ${type? type : "VARCHAR"};
