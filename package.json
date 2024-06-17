@@ -1,19 +1,27 @@
 {
   "name": "ts-cache-server",
-  "version": "0.1.1",
+  "version": "0.2.1",
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "build",
+    "rootDir": "src",
+    "strict": true,
+    "esModuleInterop": true
+  },
   "dependencies": {
+    "@types/sqlite3": "^3.1.11",
     "body-parser": "^1.20.2",
     "express": "^4.19.2",
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {
-    "typescript": "^5.2.2",
+    "@types/express": "^4.17.21",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
-    "@types/express": "^4.17.21"
+    "typescript": "^5.2.2"
   },
   "scripts": {
-    "start": "node src/server.ts",
-    "test": "node tests/run.ts"
+    "start": "npx tsx src/cacheServer.ts"
   }
 }
