@@ -1,12 +1,10 @@
-<h1 align="center">AcidDB 🧪</h1>
+<h1 align="center">Acid Cache 🧪</h1>
 
-<h3 align="center"> Active Control of Important Data </h3>
-
-NoSQL caching tooling :
+Key-value store :
 
 - Developed with Typescript & SQLite
-- Demo API server built in Express
 - Persist to storage or run in-memory
+- Demo API server built in Express
 
 ### Setup
 
