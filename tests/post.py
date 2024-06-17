@@ -1,22 +1,23 @@
-import requests
+import requests, json
 
 # Test user post endpoint
 
 users = {
-  "A Person" : "A.Person@email.com",
-  "B Person" : "B.Person@email.com",
-  "C Person" : "C.Person@email.com",
-  "D Person" : "D.Person@email.com",
-  "E Person" : "E.Person@email.com",
-  "X Person" : "X.Person@email.com",
-  "Y Person" : "Y.Person@email.com",
+  1 : {"name": "A Person", "email" :  "A.Person2024@email.com"},
+  1 : {"name": "A Person", "email" : "A.Person@email.com"},
+  2 : {"name": "B Person", "email" : "B.Person@email.com"},
+  3 : {"name": "C Person", "email" : "C.Person@email.com"},
+  4 : {"name": "D Person", "email" : "D.Person@email.com"},
+  5: {"name": "E Person", "email" : "E.Person@email.com"},
+  6: {"name": "X Person", "email" : "X.Person@email.com"},
+  7 : {"name": "A Notherdude", "email" : "A.Notherdude@email.com"},
 }
 
-for user, email in users.items():
+for id, user in users.items():
   req = requests.post(
-    url="http://localhost:3000/users",
-    json={"name":user, "email":email }
-  )
+      url="http://localhost:3000/store",
+      json=dict(key=id, value=json.dumps(user))
+    )
 
-  print("POST", user, req.status_code, req.json())
+  print("POST", users, req.status_code, req.json())
 

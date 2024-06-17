@@ -1,15 +1,15 @@
-import requests
+import requests, json
 
 # Test put endpoint
-users_updated = [
-  {"id": 1, "name": "A Person", "email" :  "A.Person2024@email.com",},
-  {"id": 100, "name": "Ana Lyst", "email" :  "A.Lyst@email.com",},
-]
+user_updates = {
+  1 : {"name": "A Person", "email" :  "A.Person2024@email.com"},
+  100 : {"name": "Ana Lyst", "email" :  "A.Lyst@email.com"},
+}
 
-for user in users_updated:
+for id, user in user_updates.items():
   req = requests.put(
-    url=f"""http://localhost:3000/users/{user["id"]}""",
-    json={"name":user["name"], "email":user["email"] }
+    url="http://localhost:3000/store",
+    json=dict(key=id, value=json.dumps(user))
   )
 
   print("PUT", req.status_code, req.json())
